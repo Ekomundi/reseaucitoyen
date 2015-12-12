@@ -1,0 +1,125 @@
+<?php
+/**
+ * @file
+ * Install functions for the profile Reseaucitoyen.
+ */
+
+// Use functions from the base profile.
+require_once(drupal_get_path('profile', 'openatrium') . '/openatrium.install');
+
+/**
+ * Implements hook_install_tasks()
+ */
+function reseaucitoyen_install_tasks(&$install_state) {
+  // Add our custom CSS file for the installation process
+  drupal_add_css(drupal_get_path('profile', 'reseaucitoyen') . '/reseaucitoyen.css');
+
+  module_load_include('inc', 'phpmailer', 'phpmailer.admin');
+
+  // Call the hook of the base profile.
+  $tasks = openatrium_install_tasks($install_state);
+
+  // Append new installation tasks.
+  $tasks += array(
+    'reseaucitoyen_mail_config' => array(
+      'display_name' => st('Mail Settings'),
+      'type' => 'form',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'function' => 'phpmailer_settings_form',
+    ),
+
+    /*
+    'reseaucitoyen_config' => array(
+      'display_name' => st('Reseaucitoyen Settings'),
+      'type' => 'form',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'function' => 'reseaucitoyen_config',
+    ),
+    */
+  );
+
+  return $tasks;
+}
+
+/**
+ * General configuration settings for Reseaucitoyen.
+ *
+ * @return
+ *   An array containing form items to place on the module settings page.
+ */
+function reseaucitoyen_config() {
+
+  $form['config'] = array(
+    '#type'  => 'fieldset',
+    '#title' => t('Reseaucitoyen configuration options'),
+  );
+
+  // . . . . .
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_install_tasks_alter()
+ */
+function reseaucitoyen_install_tasks_alter(&$tasks, $install_state) {
+  // Call the hook of the base profile.
+  openatrium_install_tasks_alter($tasks, $install_state);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for apps_profile_apps_select.
+ */
+function reseaucitoyen_form_apps_profile_apps_select_form_alter(&$form, $form_state) {
+  // Call the hook of the base profile.
+  openatrium_form_apps_profile_apps_select_form_alter($form, $form_state);
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function reseaucitoyen_install() {
+  // Call the hook of the base profile.
+  openatrium_install();
+
+  //node_access_rebuild();
+
+  // user settings
+  variable_set('user_register', USER_REGISTER_VISITORS);
+  variable_set('user_email_verification', TRUE);
+
+  //_reseaucitoyen_set_up_theme();
+  _reseaucitoyen_install_mailsystem();
+  _reseaucitoyen_install_user_restrictions();
+}
+
+/*
+function _reseaucitoyen_set_up_theme() {
+  $theme = 'oa_radix';
+  theme_enable(array($theme));
+  variable_set('theme_default', $theme);
+  theme_disable(array('responsive_bartik', 'bartik'));
+}
+*/
+
+function _reseaucitoyen_install_mailsystem()
+{
+  variable_set('mailsystem_theme', 'current');
+
+  $mail_system = variable_get('mail_system');
+  $mail_system['default-system'] = 'MimeMailSystem';
+
+  variable_set('mail_system', $mail_system);
+}
+
+function _reseaucitoyen_install_user_restrictions() {
+  db_insert('user_restrictions')
+    ->fields(array(
+      'mask' => '%@netcourrier.com',
+      'type' => 'mail',
+      'status' => 0,  // deny
+      ))
+    ->execute();
+}
