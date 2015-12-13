@@ -1,0 +1,367 @@
+; oa_1_ekomundi make file for local development
+core = "7.x"
+api = "2"
+
+projects[drupal][version] = "7.x"
+; include the d.o. profile base
+includes[] = "drupal-org.make"
+
+; +++++ TODO modules without versions +++++
+
+projects[eko_rc_fields][version] = "" ; TODO add version
+projects[eko_rc_fields][subdir] = "custom"
+
+projects[1978524][version] = "" ; TODO add version
+projects[1978524][subdir] = "custom"
+
+projects[1652676][version] = "" ; TODO add version
+projects[1652676][subdir] = "custom"
+
+projects[ekomundi][version] = "" ; TODO add version
+projects[ekomundi][subdir] = "custom"
+
+; +++++ Libraries +++++
+
+; Twitter Bootstrap
+libraries[bootstrap][directory_name] = "bootstrap"
+libraries[bootstrap][type] = "library"
+libraries[bootstrap][destination] = "themes/contrib/bootstrap"
+libraries[bootstrap][download][type] = "get"
+libraries[bootstrap][download][url] = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+
+; tinymce
+libraries[tinymce][directory_name] = "tinymce"
+libraries[tinymce][type] = "library"
+libraries[tinymce][destination] = "libraries"
+libraries[tinymce][download][type] = "get"
+libraries[tinymce][download][url] = "" ; TODO add download URI
+
+; chosen
+libraries[chosen][directory_name] = "chosen"
+libraries[chosen][type] = "library"
+libraries[chosen][destination] = "libraries"
+libraries[chosen][download][type] = "get"
+libraries[chosen][download][url] = "" ; TODO add download URI
+
+; backbone
+libraries[backbone][directory_name] = "backbone"
+libraries[backbone][type] = "library"
+libraries[backbone][destination] = "libraries"
+libraries[backbone][download][type] = "get"
+libraries[backbone][download][url] = "" ; TODO add download URI
+
+; jquery.imagesloaded
+libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
+libraries[jquery.imagesloaded][type] = "library"
+libraries[jquery.imagesloaded][destination] = "libraries"
+libraries[jquery.imagesloaded][download][type] = "get"
+libraries[jquery.imagesloaded][download][url] = "" ; TODO add download URI
+
+; markitup
+libraries[markitup][directory_name] = "markitup"
+libraries[markitup][type] = "library"
+libraries[markitup][destination] = "libraries"
+libraries[markitup][download][type] = "get"
+libraries[markitup][download][url] = "" ; TODO add download URI
+
+; select2
+libraries[select2][directory_name] = "select2"
+libraries[select2][type] = "library"
+libraries[select2][destination] = "libraries"
+libraries[select2][download][type] = "get"
+libraries[select2][download][url] = "" ; TODO add download URI
+
+; iCalcreator
+libraries[iCalcreator][directory_name] = "iCalcreator"
+libraries[iCalcreator][type] = "library"
+libraries[iCalcreator][destination] = "libraries"
+libraries[iCalcreator][download][type] = "get"
+libraries[iCalcreator][download][url] = "" ; TODO add download URI
+
+; respondjs
+libraries[respondjs][directory_name] = "respondjs"
+libraries[respondjs][type] = "library"
+libraries[respondjs][destination] = "libraries"
+libraries[respondjs][download][type] = "get"
+libraries[respondjs][download][url] = "" ; TODO add download URI
+
+; SolrPhpClient
+libraries[SolrPhpClient][directory_name] = "SolrPhpClient"
+libraries[SolrPhpClient][type] = "library"
+libraries[SolrPhpClient][destination] = "libraries"
+libraries[SolrPhpClient][download][type] = "get"
+libraries[SolrPhpClient][download][url] = "" ; TODO add download URI
+
+; simplepie
+libraries[simplepie][directory_name] = "simplepie"
+libraries[simplepie][type] = "library"
+libraries[simplepie][destination] = "libraries"
+libraries[simplepie][download][type] = "get"
+libraries[simplepie][download][url] = "" ; TODO add download URI
+
+; fullcalendar
+libraries[fullcalendar][directory_name] = "fullcalendar"
+libraries[fullcalendar][type] = "library"
+libraries[fullcalendar][destination] = "libraries"
+libraries[fullcalendar][download][type] = "get"
+libraries[fullcalendar][download][url] = "" ; TODO add download URI
+
+; jquery.imgareaselect
+libraries[jquery.imgareaselect][directory_name] = "jquery.imgareaselect"
+libraries[jquery.imgareaselect][type] = "library"
+libraries[jquery.imgareaselect][destination] = "libraries"
+libraries[jquery.imgareaselect][download][type] = "get"
+libraries[jquery.imgareaselect][download][url] = "" ; TODO add download URI
+
+; underscore
+libraries[underscore][directory_name] = "underscore"
+libraries[underscore][type] = "library"
+libraries[underscore][destination] = "libraries"
+libraries[underscore][download][type] = "get"
+libraries[underscore][download][url] = "" ; TODO add download URI
+
+; chart.js
+libraries[chart.js][directory_name] = "chart.js"
+libraries[chart.js][type] = "library"
+libraries[chart.js][destination] = "libraries"
+libraries[chart.js][download][type] = "get"
+libraries[chart.js][download][url] = "" ; TODO add download URI
+
+; openwysiwyg
+libraries[openwysiwyg][directory_name] = "openwysiwyg"
+libraries[openwysiwyg][type] = "library"
+libraries[openwysiwyg][destination] = "libraries"
+libraries[openwysiwyg][download][type] = "get"
+libraries[openwysiwyg][download][url] = "" ; TODO add download URI
+
+; flot
+libraries[flot][directory_name] = "flot"
+libraries[flot][type] = "library"
+libraries[flot][destination] = "libraries"
+libraries[flot][download][type] = "get"
+libraries[flot][download][url] = "" ; TODO add download URI
+
+; memcached
+libraries[memcached][directory_name] = "memcached"
+libraries[memcached][type] = "library"
+libraries[memcached][destination] = "libraries"
+libraries[memcached][download][type] = "get"
+libraries[memcached][download][url] = "" ; TODO add download URI
+
+; qtip
+libraries[qtip][directory_name] = "qtip"
+libraries[qtip][type] = "library"
+libraries[qtip][destination] = "libraries"
+libraries[qtip][download][type] = "get"
+libraries[qtip][download][url] = "" ; TODO add download URI
+
+; proj4js
+libraries[proj4js][directory_name] = "proj4js"
+libraries[proj4js][type] = "library"
+libraries[proj4js][destination] = "libraries"
+libraries[proj4js][download][type] = "get"
+libraries[proj4js][download][url] = "" ; TODO add download URI
+
+; ffmpeg
+libraries[ffmpeg][directory_name] = "ffmpeg"
+libraries[ffmpeg][type] = "library"
+libraries[ffmpeg][destination] = "libraries"
+libraries[ffmpeg][download][type] = "get"
+libraries[ffmpeg][download][url] = "" ; TODO add download URI
+
+; video-js
+libraries[video-js][directory_name] = "video-js"
+libraries[video-js][type] = "library"
+libraries[video-js][destination] = "libraries"
+libraries[video-js][download][type] = "get"
+libraries[video-js][download][url] = "" ; TODO add download URI
+
+; apc_admin
+libraries[apc_admin][directory_name] = "apc_admin"
+libraries[apc_admin][type] = "library"
+libraries[apc_admin][destination] = "libraries"
+libraries[apc_admin][download][type] = "get"
+libraries[apc_admin][download][url] = "" ; TODO add download URI
+
+; Profiler
+libraries[profiler][directory_name] = "profiler"
+libraries[profiler][type] = "library"
+libraries[profiler][destination] = "../../profiles/oa_1_ekomundi/libraries"
+libraries[profiler][download][type] = "get"
+libraries[profiler][download][url] = "http://ftp.drupal.org/files/projects/profiler-7.x-2.x-dev.tar.gz"
+
+; socialcalc
+libraries[socialcalc][directory_name] = "socialcalc"
+libraries[socialcalc][type] = "library"
+libraries[socialcalc][destination] = "libraries"
+libraries[socialcalc][download][type] = "get"
+libraries[socialcalc][download][url] = "" ; TODO add download URI
+
+; jquery.jit
+libraries[jquery.jit][directory_name] = "jquery.jit"
+libraries[jquery.jit][type] = "library"
+libraries[jquery.jit][destination] = "libraries"
+libraries[jquery.jit][download][type] = "get"
+libraries[jquery.jit][download][url] = "" ; TODO add download URI
+
+; dompdf
+libraries[dompdf][directory_name] = "dompdf"
+libraries[dompdf][type] = "library"
+libraries[dompdf][destination] = "libraries"
+libraries[dompdf][download][type] = "get"
+libraries[dompdf][download][url] = "" ; TODO add download URI
+
+; jstree
+libraries[jstree][directory_name] = "jstree"
+libraries[jstree][type] = "library"
+libraries[jstree][destination] = "libraries"
+libraries[jstree][download][type] = "get"
+libraries[jstree][download][url] = "" ; TODO add download URI
+
+; openlayers
+libraries[openlayers][directory_name] = "openlayers"
+libraries[openlayers][type] = "library"
+libraries[openlayers][destination] = "libraries"
+libraries[openlayers][download][type] = "get"
+libraries[openlayers][download][url] = "" ; TODO add download URI
+
+; uploadprogress
+libraries[uploadprogress][directory_name] = "uploadprogress"
+libraries[uploadprogress][type] = "library"
+libraries[uploadprogress][destination] = "libraries"
+libraries[uploadprogress][download][type] = "get"
+libraries[uploadprogress][download][url] = "" ; TODO add download URI
+
+; amcharts
+libraries[amcharts][directory_name] = "amcharts"
+libraries[amcharts][type] = "library"
+libraries[amcharts][destination] = "libraries"
+libraries[amcharts][download][type] = "get"
+libraries[amcharts][download][url] = "" ; TODO add download URI
+
+; jquery.cycle
+libraries[jquery.cycle][directory_name] = "jquery.cycle"
+libraries[jquery.cycle][type] = "library"
+libraries[jquery.cycle][destination] = "libraries"
+libraries[jquery.cycle][download][type] = "get"
+libraries[jquery.cycle][download][url] = "" ; TODO add download URI
+
+; emogrifier
+libraries[emogrifier][directory_name] = "emogrifier"
+libraries[emogrifier][type] = "library"
+libraries[emogrifier][destination] = "libraries"
+libraries[emogrifier][download][type] = "get"
+libraries[emogrifier][download][url] = "" ; TODO add download URI
+
+; jit
+libraries[jit][directory_name] = "jit"
+libraries[jit][type] = "library"
+libraries[jit][destination] = "libraries"
+libraries[jit][download][type] = "get"
+libraries[jit][download][url] = "" ; TODO add download URI
+
+; geophp
+libraries[geophp][directory_name] = "geophp"
+libraries[geophp][type] = "library"
+libraries[geophp][destination] = "libraries"
+libraries[geophp][download][type] = "get"
+libraries[geophp][download][url] = "" ; TODO add download URI
+
+; memcache
+libraries[memcache][directory_name] = "memcache"
+libraries[memcache][type] = "library"
+libraries[memcache][destination] = "libraries"
+libraries[memcache][download][type] = "get"
+libraries[memcache][download][url] = "" ; TODO add download URI
+
+; jplayer
+libraries[jplayer][directory_name] = "jplayer"
+libraries[jplayer][type] = "library"
+libraries[jplayer][destination] = "libraries"
+libraries[jplayer][download][type] = "get"
+libraries[jplayer][download][url] = "" ; TODO add download URI
+
+; cumulus
+libraries[cumulus][directory_name] = "cumulus"
+libraries[cumulus][type] = "library"
+libraries[cumulus][destination] = "libraries"
+libraries[cumulus][download][type] = "get"
+libraries[cumulus][download][url] = "" ; TODO add download URI
+
+; etherpad-lite-client
+libraries[etherpad-lite-client][directory_name] = "etherpad-lite-client"
+libraries[etherpad-lite-client][type] = "library"
+libraries[etherpad-lite-client][destination] = "libraries"
+libraries[etherpad-lite-client][download][type] = "get"
+libraries[etherpad-lite-client][download][url] = "" ; TODO add download URI
+
+; multiselect
+libraries[multiselect][directory_name] = "multiselect"
+libraries[multiselect][type] = "library"
+libraries[multiselect][destination] = "libraries"
+libraries[multiselect][download][type] = "get"
+libraries[multiselect][download][url] = "" ; TODO add download URI
+
+; geoPHP
+libraries[geoPHP][directory_name] = "geoPHP"
+libraries[geoPHP][type] = "library"
+libraries[geoPHP][destination] = "libraries"
+libraries[geoPHP][download][type] = "get"
+libraries[geoPHP][download][url] = "" ; TODO add download URI
+
+; etherpad-lite
+libraries[etherpad-lite][directory_name] = "etherpad-lite"
+libraries[etherpad-lite][type] = "library"
+libraries[etherpad-lite][destination] = "libraries"
+libraries[etherpad-lite][download][type] = "get"
+libraries[etherpad-lite][download][url] = "" ; TODO add download URI
+
+; highcharts
+libraries[highcharts][directory_name] = "highcharts"
+libraries[highcharts][type] = "library"
+libraries[highcharts][destination] = "libraries"
+libraries[highcharts][download][type] = "get"
+libraries[highcharts][download][url] = "" ; TODO add download URI
+
+; etherpad-lite-jquery-plugin
+libraries[etherpad-lite-jquery-plugin][directory_name] = "etherpad-lite-jquery-plugin"
+libraries[etherpad-lite-jquery-plugin][type] = "library"
+libraries[etherpad-lite-jquery-plugin][destination] = "libraries"
+libraries[etherpad-lite-jquery-plugin][download][type] = "get"
+libraries[etherpad-lite-jquery-plugin][download][url] = "" ; TODO add download URI
+
+; geos
+libraries[geos][directory_name] = "geos"
+libraries[geos][type] = "library"
+libraries[geos][destination] = "libraries"
+libraries[geos][download][type] = "get"
+libraries[geos][download][url] = "" ; TODO add download URI
+
+; timeago
+libraries[timeago][directory_name] = "timeago"
+libraries[timeago][type] = "library"
+libraries[timeago][destination] = "libraries"
+libraries[timeago][download][type] = "get"
+libraries[timeago][download][url] = "" ; TODO add download URI
+
+; apc
+libraries[apc][directory_name] = "apc"
+libraries[apc][type] = "library"
+libraries[apc][destination] = "libraries"
+libraries[apc][download][type] = "get"
+libraries[apc][download][url] = "" ; TODO add download URI
+
+; swfupload
+libraries[swfupload][directory_name] = "swfupload"
+libraries[swfupload][type] = "library"
+libraries[swfupload][destination] = "libraries"
+libraries[swfupload][download][type] = "get"
+libraries[swfupload][download][url] = "" ; TODO add download URI
+
+; chart
+libraries[chart][directory_name] = "chart"
+libraries[chart][type] = "library"
+libraries[chart][destination] = "libraries"
+libraries[chart][download][type] = "get"
+libraries[chart][download][url] = "" ; TODO add download URI
+
